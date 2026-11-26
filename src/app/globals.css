@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f7f8f6;
+  --foreground: #18231f;
+  --muted: #75817b;
+  --line: #e8ece8;
+  --green: #167653;
+  --green-dark: #105d40;
+  --green-soft: #e8f3ed;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--background); color: var(--foreground); font-family: var(--font-body), sans-serif; }
+button, input { font: inherit; }
+button { cursor: pointer; }
+::selection { background: #cce6d8; color: #173b2b; }
+
+.page-shell { min-height: 100vh; }
+.sidebar { width: 248px; background: #fff; border-right: 1px solid var(--line); }
+.brand-mark { display:grid; place-items:center; width:36px; height:36px; border-radius:11px; color:white; background:var(--green); }
+.nav-link { display:flex; align-items:center; gap:12px; width:100%; padding:11px 13px; border-radius:9px; color:#68756e; font-size:13px; font-weight:600; transition:.18s; }
+.nav-link.active { background:var(--green-soft); color:var(--green-dark); }
+.nav-link:not(.active):hover { background:#f6f8f6; color:var(--foreground); }
+.main-content { width:min(100% - 48px, 1160px); margin:0 auto; }
+.stat-card { background:white; border:1px solid var(--line); border-radius:14px; padding:19px; min-width:0; }
+.table-row { border-top:1px solid #eef0ed; }
+.table-row:hover { background:#fbfcfb; }
+.filter-chip { border:1px solid #e5eae6; color:#68756e; background:white; border-radius:8px; padding:8px 13px; font-size:12px; font-weight:600; transition:.18s; }
+.filter-chip.selected { border-color:#c9dfd2; color:var(--green-dark); background:var(--green-soft); }
+.search-field { width:100%; outline:none; border:1px solid #e6ebe7; border-radius:9px; padding:10px 12px 10px 36px; font-size:13px; background:white; }
+.search-field:focus { border-color:#8ebca2; box-shadow:0 0 0 3px #e8f3ed; }
+.pill { display:inline-flex; align-items:center; border-radius:6px; padding:4px 7px; font-size:10px; font-weight:700; letter-spacing:.02em; }
+@media (max-width: 800px) {
+  .sidebar { display:none; }
+  .main-content { width:min(100% - 32px, 1160px); }
+}
+@media (max-width: 560px) {
+  .main-content { width:calc(100% - 28px); }
+}
